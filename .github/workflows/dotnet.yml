@@ -20,7 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore Npgsql.sln
     - name: Build
-      run: dotnet build Npgsql.sln --no-restore -c ReleaseOptimizedCryptography
+      run: dotnet build Npgsql.sln --no-restore -c ReleaseOptimizedCryptography /p:Platform=x86
 # tests are currently disabled as they will require postgres to be installed
 # and running. Not that hard but probably not needed as our changes are minimal
     #- name: Test
