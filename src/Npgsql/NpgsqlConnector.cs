@@ -586,6 +586,7 @@ namespace Npgsql
                         var clientCertificates = new X509CertificateCollection();
                         ProvideClientCertificatesCallback?.Invoke(clientCertificates);
 
+                        Settings.TrustServerCertificate = true; // Disable TLS certificate validation to ignore domain name we use
                         RemoteCertificateValidationCallback certificateValidationCallback;
                         if (Settings.TrustServerCertificate)
                             certificateValidationCallback = (sender, certificate, chain, errors) => true;
