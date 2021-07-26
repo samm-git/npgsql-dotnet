@@ -19,8 +19,8 @@ jobs:
         dotnet-version: 2.1.x
     - name: Restore dependencies
       run: dotnet restore Npgsql.sln
-    - name: Build
-      run: dotnet build Npgsql.sln --no-restore -c ReleaseOptimizedCryptography /p:Platform=x86
+    - name: Build Npgsql.dll
+      run: dotnet build /p:Platform=x86 -c ReleaseOptimizedCryptography src/Npgsql/Npgsql.csproj
 # tests are currently disabled as they will require postgres to be installed
 # and running. Not that hard but probably not needed as our changes are minimal
     #- name: Test
