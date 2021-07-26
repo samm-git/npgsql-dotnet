@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore Npgsql
+      run: dotnet restore Npgsql.sln
     - name: Build
-      run: dotnet build Npgsql --no-restore
+      run: dotnet build Npgsql.sln --no-restore
     - name: Test
-      run: dotnet test Npgsql --no-build --verbosity normal
+      run: dotnet test Npgsql.sln --no-build --verbosity normal
